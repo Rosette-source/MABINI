@@ -1,0 +1,447 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 50px; /* Adjust to match header height */
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #0000008e, #ffffff); /* Light turquoise background */
+    color: #333;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #ff3d00, #ffab00); /* Vibrant gradient */
+    color: #fff;
+    padding: 5px 15px; /* Increased padding for better spacing */
+    position: fixed; /* Fixes the header at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensures it stays above other content */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between menu and title */
+    border-bottom: 3px solid #fff; /* Border at the bottom of the header */
+}
+
+/* Title Styles */
+header h1 {
+    margin: 0; /* Remove margins */
+    font-size: 2.0em; /* Adjusted for better fit */
+    font-family: 'Great Vibes', cursive;
+    z-index: 1;
+    white-space: nowrap; /* Prevents text from wrapping */
+    flex-grow: 1; /* Allow h1 to take up remaining space */
+    text-align: center; /* Center align text */
+    margin-top: 20px;
+}
+
+/* Menu Container Styles */
+.menu-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    padding-right: 10px; /* Space between menu and header text */
+}
+
+/* Menu Toggle Styles */
+#menuToggle {
+    display: none; /* Hidden checkbox */
+}
+
+.menu-toggle-label {
+    display: block;
+    font-size: 30px; /* Adjusted for better fit */
+    background: none;
+    border: none;
+    color: white; /* Menu icon color */
+    cursor: pointer;
+}
+
+/* Navigation Styles */
+.nav {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position menu absolutely */
+    top: 100%; /* Position below header */
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #ff3d00, #ffab00); /* Consistent background */
+    flex-direction: column; /* Stack items vertically */
+    z-index: 999; /* Ensure it is above other content */
+}
+
+#menuToggle:checked ~ .nav {
+    display: flex; /* Show navigation when checked */
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.nav ul li {
+    width: 100%; /* Ensure items take full width */
+}
+
+.nav ul li a {
+    display: block;
+    color: white; /* Link color */
+    text-align: left; /* Align text to the left */
+    padding: 10px; /* Increased padding */
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav ul li a:hover, .nav ul li a.active {
+    background-color: #575757;
+}
+
+/* Responsive Styles */
+@media (max-width: 100px) {
+    .menu-toggle-label {
+        display: block; /* Show the toggle button on small screens */
+    }
+
+    header {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .nav {
+        width: 100%; /* Full width on mobile */
+    }
+}
+
+/* Section Styles */
+.section {
+    padding: 60px 30px; /* Add padding for sections */
+    margin-top: 60px; /* Ensure sections are not hidden under the fixed header */
+}
+
+.section:nth-of-type(odd) {
+    background: white; /* Alternate section background color */
+}
+
+
+.text-content {
+    position: relative; /* Ensures text is above the background */
+    color: white; /* Change text color for better visibility */
+    text-align: center; /* Center the text */
+    padding: 50px; /* Add some padding around the text */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent background for better readability */
+}
+
+section.parallax {
+    background-image: url('images/logo.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styles for the section */
+.parallax {
+    background: #f0f0f0; /* Change background as needed */
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Welcome container styles */
+.welcome-container {
+    position: relative;
+    text-align: center;
+}
+
+/* Image container to control the layout */
+.image-container {
+    position: relative;
+}
+
+/* Styling for the blurred logo */
+.blurred-logo {
+    width: 200px; /* Adjust the size as needed */
+    height: 200px;
+    border-radius: 50%; /* Makes the image circular */
+    filter: blur(5px); /* Apply blur effect */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Place image behind the text */
+}
+
+/* Text content styles */
+.text-content {
+    position: relative;
+    z-index: 1; /* Ensure text is above the image */
+}
+
+/* Heading and paragraph styles */
+.text-content h2 {
+    margin: 0;
+    font-size: 24px;
+    font-family: 'Skranji', cursive;
+}
+
+.text-content p {
+    margin: 10px 0 0;
+    font-size: 16px;
+}
+.message-section {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background:linear-gradient(135deg, #96daf0, #ffffff);;
+    
+}
+
+.captain-image {
+    width: 100%;
+    max-width: 200px; /* Adjust the max-width as needed */
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.message-content {
+    width: 100%;
+    max-width: 600px; /* Adjust the max-width as needed */
+    margin-bottom: 20px;
+}
+
+.toggle-translation {
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.toggle-translation {
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+/* About Section */
+#about {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 10px 0;
+}
+
+/* About Section Styles */
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.about-item {
+    background: WHITE;
+    padding: 20px;
+    border: 5px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+
+/* Announcements Section */
+#announcements{
+    background-color: white;
+}
+.announcements-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    
+}
+
+.announcement {
+    background:linear-gradient(135deg, #96daf0, #ffffff);
+    padding: 20px;
+    border: 10px solid #fdfdfd45;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+/* Resources Section */
+#resources {
+    background: rgba(255, 255, 255, 0.683); /* Light green background */
+    padding: 10px 0;
+}
+
+#resources ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#resources ul li {
+    margin-bottom: 10px;
+}
+
+#resources ul li a {
+    color: #00796b; /* Darker green */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#resources ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.resource-section {
+    margin-bottom: 20px;
+}
+
+.resource-box {
+    background: #fff;
+    border: 3px solid #9ae4e8;;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.resource-box h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Gallery section title */
+#gallery{
+    background-color: white;
+}
+#gallery h2 {
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+/* Grid layout for gallery items */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Individual gallery item styles */
+.gallery-item {
+    background: #ffffff16;
+    padding: 20px;
+    border: 2px solid #ffab00;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Responsive image styles */
+.responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Title within gallery item */
+.gallery-item h3 {
+    margin: 10px 0;
+}
+
+
+
+/*Contact section*/
+#contacts {
+    background: #ffab00; /* Vibrant orange background */
+    padding: 50px 0;
+}
+
+#contacts form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contacts form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#contacts form input,
+#contacts form textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#contacts form button {
+    background: #ff3d00; /* Vibrant red-orange */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contacts form button:hover {
+    background: #e64a19; /* Darker red-orange */
+}
+
+
+/* Footer */
+footer {
+    background: #00796b; /* Darker green background */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
